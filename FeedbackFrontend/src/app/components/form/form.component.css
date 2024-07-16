@@ -1,0 +1,205 @@
+div#contact {
+    width: 444px;
+    margin: 0 auto;
+}
+
+div#top {
+    background: url(../../../../public/img/okantovka/top.jpg);
+    height: 64px;
+}
+
+div#top h1 {
+    font-family: Verdana, Arial;
+    font-size: 22px;
+    font-weight: normal;
+    padding: 20px 0 0 20px;
+    color: #fff;
+}
+
+div#center {
+    background: url(../../../../public/img/okantovka/center.jpg);
+    padding: 5px 15px 5px 25px;
+}
+
+div#bot {
+    background: url(../../../../public/img/okantovka/bot.jpg);
+    height: 13px;
+}
+
+* body h2 {
+    border-bottom: 1px solid #0066CC;
+    color:#0066CC;
+}
+
+
+#contact_form {
+    font-family: Verdana, Arial, "Times New Roman";
+    font-size: 12px;
+    color: #666;
+}
+
+#contact_form input, select, textarea {
+    font-size: 11px;
+    color:#999999;
+    width: 250px;
+    height: 28px;
+    /*border: #CCC solid 1px;*/
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+#contact_form input:hover, select:hover, textarea:hover {
+    border: 1px solid #999;
+}
+
+#contact_form input:focus, select:focus, textarea:focus {
+    border: 1px solid #999;
+}
+
+
+#contact_form select {
+    padding: 5px 5px 3px 5px;
+}
+#contact_form select option {
+    cursor: pointer;
+    padding: 5px;
+}
+
+#contact_form textarea {
+    height: 80px;
+    padding: 4px 2px 2px 4px;
+    font-family: Verdana, Arial, "Times New Roman";
+}
+
+#contact_form input[type=text] {
+    padding: 0 5px 0px 30px;
+    background-position: 7px 5px;
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+
+input[type=submit]:disabled {
+    padding: 0;
+    cursor:pointer;
+    max-width:135px;
+    max-height: 23px;
+    background: url(../../../../public/img/icons/send_button.png);
+}
+
+input[type=submit] {
+    padding: 0;
+    text-align: center;
+    cursor:pointer;
+    max-width:135px;
+    max-height: 23px;
+    background-color: blue;
+}
+
+input#send:hover {
+    border: 1px solid #999;
+    color: #666;
+}
+
+#contact_form label {
+    display:inline-block;
+    width: 100px;
+    vertical-align:top;
+    margin-top: 6px;
+}
+
+#contact_form span {
+    
+    padding:0;
+    margin:0;
+    margin-bottom: 10px;
+    display: block;
+
+}
+
+#name {
+    background-image: url(../../../../public/img/icons/user_suit.png);
+}
+
+#email {
+    background-image: url(../../../../public/img/icons/email.png);
+}
+
+#phone {
+    background-image: url(../../../../public/img/icons/phone.png);
+}
+
+#ajax_loader {
+    display:none;
+}
+
+.error {
+    margin-top: 3px;
+    font-size: 9px;
+    border: 1px solid #FF4F4F;
+    color:#D6000E;
+    background: #FFF2F2;
+    padding: 1px;
+    text-align: center;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+.warning {
+    
+    margin-top: 3px;
+    font-size: 11px;
+    color: #9F6000;
+    background: #FFF9D5;
+    border: 1px solid #FFD324;
+    padding: 5px;
+    text-align: center;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+.warning:empty {
+    display:none;
+}
+
+.success {
+    border: 1px solid #646b64 ;
+    color:#4F8A10;
+    background: #F2FFF2;
+
+    margin-top: 3px;
+    font-size: 11px;
+    padding: 5px;
+    text-align: center;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+.success:empty {
+    display:none;
+}
+
+#contact_form .noicon {
+    padding: 0px 7px 0 7px;
+    text-align:center;
+}
+
+.ng-valid.ng-touched:not(form, #security_code) {
+    border-left: 5px solid #42A948;
+}
+
+.ng-invalid.ng-touched:not(form, #security_code) {
+    border-left: 5px solid #A94442;
+}
+input:-webkit-autofill {
+    transition: all 5000s ease-in-out;
+}
