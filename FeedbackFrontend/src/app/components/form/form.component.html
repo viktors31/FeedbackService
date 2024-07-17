@@ -21,7 +21,6 @@
   @if (contactMail?.touched && contactMail?.invalid) {
     <div class="error">Пожалуйста, укажите корректный email</div> }
 </span>
-  
   <span class="input">
     <label for="phone"><b>Ваш телефон:</b> </label>
     <input #spyphone [(ngModel)]="formData.contactPhone" type="text" id="phone" name="phone" formControlName = "contactPhone" prefix="+7" mask="(000) 000 00 00" [validation]="true" autocomplete="off"/>
@@ -69,6 +68,7 @@
   @if (this.success) {
   <div class="answer" [hidden]="!this.success">
     <h2 align="center">Ответ сервера, вырезка из базы данных:</h2>
+    {{gh}}
     {{this.postAnswer | json}}
     <app-answer [topic]="{
       id: 1,

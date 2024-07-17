@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "BrN67J+3C5s=",
+  "dgSpecHash": "j/Hor8N7wpg=",
   "success": true,
-  "projectFilePath": "E:\\feedback_st\\FeedbackAPI\\FeedbackAPI\\FeedbackAPI.csproj",
+  "projectFilePath": "E:\\FeedbackService\\FeedbackAPI\\FeedbackAPI\\FeedbackAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\VIKTOR\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\VIKTOR\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\feedback_st\\FeedbackAPI\\FeedbackAPI\\FeedbackAPI.csproj": {}
+    "E:\\FeedbackService\\FeedbackAPI\\FeedbackAPI\\FeedbackAPI.csproj": {}
   },
   "projects": {
-    "E:\\feedback_st\\FeedbackAPI\\FeedbackAPI\\FeedbackAPI.csproj": {
+    "E:\\FeedbackService\\FeedbackAPI\\FeedbackAPI\\FeedbackAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\feedback_st\\FeedbackAPI\\FeedbackAPI\\FeedbackAPI.csproj",
+        "projectUniqueName": "E:\\FeedbackService\\FeedbackAPI\\FeedbackAPI\\FeedbackAPI.csproj",
         "projectName": "FeedbackAPI",
-        "projectPath": "E:\\feedback_st\\FeedbackAPI\\FeedbackAPI\\FeedbackAPI.csproj",
+        "projectPath": "E:\\FeedbackService\\FeedbackAPI\\FeedbackAPI\\FeedbackAPI.csproj",
         "packagesPath": "C:\\Users\\VIKTOR\\.nuget\\packages\\",
-        "outputPath": "E:\\feedback_st\\FeedbackAPI\\FeedbackAPI\\obj\\",
+        "outputPath": "E:\\FeedbackService\\FeedbackAPI\\FeedbackAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\VIKTOR\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -19,6 +19,11 @@ interface ImessageDbFrame {
   contact: Contact,
 }
 
+type Me {
+  id: number;
+  name: string;
+}
+
 @Component({
   selector: 'app-form',
   standalone: true,
@@ -46,6 +51,7 @@ export class FormComponent {
   formData = new NewMessage('','' , '', 0, ''); //Данные сюда
   capchaValue: string = ''; //Значение капчи (стринги, так как число пустое сделать не варик)
   success: boolean = false; //Хранит успех отправки, нужно чтобы вывести сообщение (костыль)
+  suc2?: Me;
 
   //Паттерн для символа (в маску ввода имени)
   nameSymbolPattern = {'N': {pattern: new RegExp('[а-яА-Яa-zA-Z]') }};
@@ -80,8 +86,11 @@ export class FormComponent {
     messageText : new FormControl(this.formData.messageText, [Validators.required, Validators.maxLength(1024)]),
     capcha : new FormControl(this.capchaValue, Validators.required),
   });
+  
   //this.postAnswer.topic = {id: 0, name: 'no_name'};
-
+  let gh:string;
+  let jjj: Me;
+  this.suc2 = {id: 1, name: 'Hello'};
 
   }
   //Валидатор для топиков (если выбран id не из массива - такого топика не существует)
@@ -100,7 +109,7 @@ export class FormComponent {
   onSubmit() {
     //Как достать Json response..? 
     console.log('Sending... ',this.formData);
-
+    jjj = this.formData.topicId;
     console.log('ANSWER FROM SERVER BEFORE ', this.postAnswer);
     //this.formApi.postMessage(this.formData).subscribe((data:IMessage) => this.postAnswer = {id:7777, topicId : data.topicId, contactId : data.contactId, messageText : data.messageText, postDate: data.postDate});
     this.formApi.postMessage(this.formData).subscribe((data:ImessageDbFrame) => {this.postAnswer = data; this.success = true;});
