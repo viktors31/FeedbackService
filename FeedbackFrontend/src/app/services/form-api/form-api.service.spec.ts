@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { FormServiceService } from './form-service.service';
+import { FormAPIService } from './form-api.service';
 
 describe('FormServiceService', () => {
-  let service: FormServiceService;
+  let service: FormAPIService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(FormServiceService);
+    service = TestBed.inject(FormAPIService);
   });
 
   it('should be created', () => {

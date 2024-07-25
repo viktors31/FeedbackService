@@ -1,18 +1,7 @@
 import { Component, Input } from '@angular/core';
-import { MessageTopic } from '../../models/messagetopic';
-import { Contact, IContact } from '../../models/contact';
-import { IMessage, Message } from '../../models/message';
+import { TMessageFull } from '../../models/message';
 import { CommonModule } from '@angular/common';
-
-interface ImessageDbFrame {
-  topic?: MessageTopic,
-  message?: Message,
-  contact?: Contact,
-}
-export interface IMessageTopic {
-  id?: number;
-  name?: string;
-}
+//import { stringWithMaxLen } from '../../helpers/truncateString';
 
 @Component({
   selector: 'app-answer',
@@ -23,18 +12,21 @@ export interface IMessageTopic {
 })
 
 
+
 export class AnswerComponent {
-  @Input() topic!: IMessageTopic;
-  @Input() contact!: IContact;
-  @Input() message!: Message;
-  //topic = new MessageTopic(1, 'H');
-  //message = new Message(1, 1, 1, 'HelloHelloHelloHelloHello', 'date');
-  //contact = new Contact(1, 'mail@mail.com', '+79201230000', 'Viktor');
-  
+  @Input() postedMessage?: TMessageFull; //Форме передаем объект MessagFull
 
   constructor() {}
 
-  ngOnInit() {
-    console.log('LOADED DIAGRAM');
+  //Усечение строки
+  stringWithMaxLen(s: string | undefined, len: number) {
+    s ??= "";
+    if (s.length > len)
+      return s.slice(0, len) + '...';
+    return s;
+  };
+
+  ngAfterViewInit() {
+    console.log('Rendering DB form with data: ', this.postedMessage);
   }
 }

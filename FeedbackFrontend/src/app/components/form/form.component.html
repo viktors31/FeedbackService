@@ -10,27 +10,27 @@
 <form [formGroup]="postMessageForm"  (ngSubmit)="onSubmit()">
   <span class="input">
   <label for="name"><b>Ваше имя:</b> </label>
-  <input  #spyname  [(ngModel)]="formData.contactName" type="text" id="name" name="name" formControlName = "contactName"  [patterns]="nameSymbolPattern" mask="NNNNNNNNNN" [validation]="false" autocomplete="off"/>
+  <input  #spyname   type="text" id="name" name="name" formControlName = "contactName"  [patterns]="nameSymbolPattern" mask="NNNNNNNNNN" [validation]="false" autocomplete="off"/>
   @if (contactName?.touched && contactName?.invalid) {
   <div class="error">Пожалуйста, представьтесь</div> }
   </span>
   
   <span class="input">
   <label for="email"><b>Ваш Email:</b> </label>
-  <input  #spymail [(ngModel)]="formData.contactMail" type="text" id="email" name="email" formControlName = "contactMail" mask ="A*@A*.SSS" [validation]="false" [dropSpecialCharacters]="false" autocomplete="off" />
+  <input  #spymail  type="text" id="email" name="email" formControlName = "contactMail" mask ="A*@A*.SSS" [validation]="false" [dropSpecialCharacters]="false" autocomplete="off" />
   @if (contactMail?.touched && contactMail?.invalid) {
     <div class="error">Пожалуйста, укажите корректный email</div> }
 </span>
   <span class="input">
     <label for="phone"><b>Ваш телефон:</b> </label>
-    <input #spyphone [(ngModel)]="formData.contactPhone" type="text" id="phone" name="phone" formControlName = "contactPhone" prefix="+7" mask="(000) 000 00 00" [validation]="true" autocomplete="off"/>
+    <input #spyphone  type="text" id="phone" name="phone" formControlName = "contactPhone" prefix="+7" mask="(000) 000 00 00" [validation]="true" autocomplete="off"/>
     @if (contactPhone?.touched && contactPhone?.invalid) {
       <div class="error">Пожалуйста, укажите корректный номер телефона</div> }
     </span>
   
   <span class="input">
   <label for="sales"><b>Тема:</b> </label>
-  <select #spytopic [(ngModel)]="formData.topicId" id="sales" name="sales" formControlName="messageTopic" >
+  <select #spytopic  id="sales" name="sales" formControlName="topicId" >
     <option *ngFor="let currentTopic of topics" [value]="currentTopic.id">{{currentTopic.name}}</option>
   </select>
 
@@ -43,7 +43,7 @@
 
   <span class="input">
   <label for="message"><b>Ваше сообщение:</b> </label>
-  <textarea #spymsg [(ngModel)]="formData.messageText" id="message" name="message" formControlName="messageText" placeholder="Введите ваше сообщение..." ></textarea>
+  <textarea #spymsg  id="message" name="message" formControlName="messageText" placeholder="Введите ваше сообщение..." ></textarea>
   @if (messageText?.touched && messageText?.invalid) {
     <div class="error">Оставьте сообщение.</div> }
   </span>
@@ -51,9 +51,9 @@
   
   <span class="input">
   <label for="security_code"><b>Пройдите капчу:</b> </label>
-  <input #spyca [(ngModel)]="capchaValue" class="noicon" type="text" id="security_code" name="security_code" formControlName="capcha" style="width:100px" autocomplete="off"/>
-  @if (capcha?.touched && capcha?.invalid) {
-    <div class="error">Введите проверочный код.</div> }
+  <input #spyca  class="noicon" type="text" id="security_code" name="security_code" style="width:100px" autocomplete="off"/>
+  <!-- @if (capcha?.touched && capcha?.invalid) {
+    <div class="error">Введите проверочный код.</div> } -->
 </span>
 <span id="submit" class="input">
   <label for="submit"></label>
@@ -61,6 +61,7 @@
   </span>
   <div class="warning">{{this.formApi.postFormRequestErrorMessage}}</div>
   <div class="success" [hidden]="!this.success">Сообщение успешно отправлено!</div>
+  <div>{{this.postMessageForm.value | json}}</div>
   </form>
     </div>
   </div>
@@ -68,25 +69,7 @@
   @if (this.success) {
   <div class="answer" [hidden]="!this.success">
     <h2 align="center">Ответ сервера, вырезка из базы данных:</h2>
-    {{gh}}
-    {{this.postAnswer | json}}
-    <app-answer [topic]="{
-      id: 1,
-      name: 'topic',
-    }" 
-    [contact]="{
-      id: this.postAnswer!.contact.id,
-      mail: this.postAnswer!.contact.mail,
-      phone: this.postAnswer!.contact.phone,
-      name: this.postAnswer!.contact.name,
-    }"
-    [message]="{
-      id: this.postAnswer!.message.id,
-      topicId: this.postAnswer!.message.topicId,
-      contactId: this.postAnswer!.message.contactId,
-      messageText: this.postAnswer!.message.messageText,
-      postDate: this.postAnswer!.message.postDate,
-    }"
+    <app-answer [postedMessage]="this.postedMessage"
     ></app-answer>
   </div> }
 

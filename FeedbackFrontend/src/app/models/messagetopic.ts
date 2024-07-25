@@ -1,3 +1,9 @@
+export type TMessageTopics = Array<TMessageTopic>;
+
+export type TMessageTopic = {
+    id: number,
+    name: string,
+}
 export interface IMessageTopic {
     id: number;
     name: string;

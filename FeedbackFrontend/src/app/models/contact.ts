@@ -1,3 +1,10 @@
+export type TContact = {
+    id: number,
+    mail: string,
+    phone: string,
+    name: string,
+}
+
 export interface IContact {
     id: number;
     mail: string;
