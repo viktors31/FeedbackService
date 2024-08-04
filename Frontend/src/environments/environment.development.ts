@@ -1,4 +1,4 @@
 export const environment = {
     production: false,
-    apiUrl: 'http://localhost:5100/api',
+    apiUrl: 'https://victordeveloper.ru/api',//http://localhost:5100/api',
 };
